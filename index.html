@@ -1,0 +1,574 @@
+<!doctype html>
+<html lang="it">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lorenzo Pieraccioni</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700&family=Source+Sans+3:wght@400;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+  <!-- L'aspetto sta in un file separato, condiviso da tutte le pagine. Deve trovarsi nella stessa cartella. -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!--
+  STRUTTURA DEI TITOLI (la gerarchia ad albero)
+  <h1> il nome (uno solo per pagina) · <h2> sezione · <h3> voce · <h4> sotto-voce.
+  Non saltare livelli. Il livello dice solo a che profondità sta il titolo:
+  l'aspetto lo decide il file style.css.
+  Una sotto-voce si inserisce dentro <div class="children"> della voce a cui appartiene.
+
+  Le parti da completare sono racchiuse in <span class="todo">[...]</span>:
+  sostituisci tutto il blocco, parentesi comprese, con il testo vero.
+  Dopo ogni modifica: salva (Ctrl+S o Cmd+S) e ricarica la pagina nel browser.
+-->
+  <div class="page">
+    <!--
+    MENU: href="#formazione" porta alla sezione con id="formazione" nella stessa pagina.
+    href="about.html" porta a un'altra pagina (stessa cartella).
+    Il menu è copiato in ogni pagina: se lo modifichi qui, modificalo anche in about.html.
+  -->
+    <div class="topbar mono">
+      <a href="index.html">Portfolio</a>
+      <nav aria-label="Sezioni">
+        <a href="#formazione">Formazione</a>
+        <a href="#esperienza">Esperienza</a>
+        <!--
+        <a href="#competenze">Competenze</a>
+        -->
+        <a href="#eventi">Eventi</a>
+        <a href="about.html">Chi sono</a>
+        <a href="#contatti">Contatti</a>
+      </nav>
+    </div>
+
+    <!-- INTESTAZIONE: le frasi qui sotto descrivono la tua situazione attuale. Aggiornale quando cambia. -->
+    <header class="hero">
+      <p class="eyebrow mono">Ingegneria energetica</p>
+      <h1>Lorenzo Pieraccioni</h1>
+      <p class="lede">Laureando magistrale in Ingegneria Energetica presso l'Università di Pisa, con un'esperienza
+        lavorativa precedente come Quality Project Manager Support presso Baker Hughes. La tesi riguarda la validazione
+        di PyPSA-Earth, modello di sistema elettrico, applicato alla Cina.</p>
+
+      <!--
+      <dl class="spec">
+        <dt class="mono">LINGUE</dt>
+        <dd>Italiano (madrelingua) · Inglese B2 (autovalutato)</dd>
+        <dt class="mono">STUMENTI</dt>
+        <dd>Python · MATLAB/Simulink · ANSYS Fluent · LabVIEW · Office · Fusion 360</dd>
+      </dl>
+       -->
+
+    </header>
+
+    <!--
+    SEZIONE: ogni blocco da <section> a </section> è una sezione del sito.
+    Per aggiungerne una: copia un blocco intero, incollalo sotto, cambia id e titolo,
+    poi aggiungi nel menu (in ogni pagina) un link con lo stesso nome. L'id deve essere unico.
+    Dentro ogni sezione, ogni <article class="entry"> è una voce (un corso, un lavoro).
+  -->
+    <section class="sec" id="formazione">
+      <h2 class="mono">Formazione</h2>
+      <div>
+        <article class="entry">
+          <h3>Laurea magistrale in Ingegneria Energetica (LM-30)</h3>
+          <p class="where">Università di Pisa</p>
+          <p class="when mono">ottobre 2023 – in corso, laurea prevista febbraio 2027</p>
+
+          <div class="children">
+            <article class="entry">
+              <details class="project">
+                <summary>
+                  <h4>Percorso di studi</h4>
+                  <span class="meta">Il percorso magistrale offre una formazione ampia nell'ingegneria dell'energia, con
+                    una forte impronta termo-meccanica.</span>
+                </summary>
+                <div class="project-body">
+                  <p class="text">La base è la termofluidodinamica, con la trasmissione del calore, applicata alla
+                    progettazione e alla costruzione delle macchine termiche a fluido. A essa si collegano l'efficienza
+                    energetica negli impianti termotecnici e il risparmio energetico nell'industria e nell'edilizia.</p>
+                  <p class="text">Questa base è affiancata da due ambiti. Il primo è il sistema energetico nel suo
+                    insieme: la gestione dei sistemi elettrici, la tecnica e l'economia dell'energia, le energie
+                    rinnovabili e la conversione dell'energia. Il secondo riguarda l'esercizio e l'impatto ambientale
+                    degli impianti: combustione e controllo degli inquinanti, controllo dei processi.</p>
+                  <p class="text">La tesi si sposta dal livello del singolo componente o impianto a quello del sistema
+                    elettrico.</p>
+                </div>
+              </details>
+            </article>
+
+            <article class="entry">
+              <details class="project">
+                <summary>
+                  <h4>Tesi: Decarbonizing China's Power System with open-source PyPSA-Earth</h4>
+                  <span class="when mono">Tesi in corso · Traineeship Erasmus+: febbraio 2026 – luglio 2026</span>
+                  <span class="meta">La tesi valuta se il modello PyPSA-Earth, che rappresenta un sistema energetico ed elettrico,
+                    riproduca in modo attendibile il caso della Cina in scenari futuri di decarbonizzazione al 2060.</span>
+                </summary>
+                <div class="project-body">
+                  <span class="meta"><strong>Competenze:</strong> validazione di modelli e confronto con dati di
+                    riferimento (benchmarking); simulazione di scenari di decarbonizzazione; analisi di dati climatici; lavoro in
+                    lingua inglese presso un istituto di ricerca all'estero. <strong>Strumenti:</strong> Python,
+                    PyPSA-Earth.</span>
+                  <p class="text">È svolta nell'ambito di un tirocinio Erasmus+ presso il Potsdam Institute for Climate
+                    Impact
+                    Research (PIK), a Potsdam.</p>
+                  <p class="text">Ho lavorato sulla validazione di PyPSA-Earth, un modello open-source per
+                    l'ottimizzazione del
+                    sistema elettrico, applicato al caso della Cina. Attraverso la simulazione di scenari di
+                    decarbonizzazione ho
+                    analizzato dati climatici e confrontato i risultati con dati statistici e studi di riferimento.</p>
+                  
+                </div>
+              </details>
+            </article>
+
+            <article class="entry">
+              <details class="project">
+                <summary>
+                  <h4>Progetti universitari</h4>
+                  <span class="when mono">STRUMENTI: MATLAB/Simulink · ANSYS Fluent · LabVIEW · Office · Fusion 360</span>
+                </summary>
+                <div class="project-body">
+                  <ul class="projects">
+                    <li>
+                      <details class="project">
+                        <summary>
+                          <span class="item-title">Analisi impiantistica per la fornitura energetica di un complesso di
+                            edifici a Milano</span>
+                          <span class="when mono">Corso: Impianti termotecnici integrati · A.A. 2023/2024</span>
+                          <span class="when mono">Docenti: Eva Schito, Sauro Filippeschi</span>
+                          <span class="meta"><strong>Competenze:</strong> analisi di dati orari di clima e carico;
+                            modellazione di impianti con pompe di calore, fotovoltaico, solare termico e accumulo;
+                            analisi
+                            economica (investimento iniziale, manutenzione, VAN, tempo di ritorno); ottimizzazione su
+                            più
+                            obiettivi; lavoro in gruppo. <strong>Strumento:</strong> MATLAB.</span>
+                          </parameter>
+                        </summary>
+                        <div class="project-body">
+                          <p class="meta">Gruppo di 4 persone · Il mio ruolo: contributo a tutte le fasi del lavoro, con
+                            un'attenzione particolare all'analisi economica</p>
+                          <p class="text">Un super-condominio a Milano (centro commerciale, palestra, uffici e due
+                            edifici
+                            residenziali) ha bisogno di riscaldamento ed energia elettrica. Il compito era scegliere la
+                            soluzione impiantistica più conveniente dal punto di vista economico e ambientale. Abbiamo
+                            confrontato due soluzioni: pompe di calore aria-acqua con fotovoltaico, in due varianti
+                            (un'area
+                            fotovoltaica comune oppure una comunità energetica rinnovabile, con un impianto per ogni
+                            edificio), e pompe di calore acqua-acqua con solare termico, teleriscaldamento e accumulo
+                            termico.</p>
+                          <p class="text">Siamo partiti dai dati orari di clima e di carico. Poi abbiamo modellato gli
+                            impianti e li abbiamo confrontati con un caso base a sole caldaie su costi operativi, valore
+                            attuale netto (VAN) a 20 anni, tempo di ritorno ed emissioni di CO₂. Infine abbiamo
+                            ottimizzato
+                            le configurazioni su VAN ed emissioni.</p>
+                          <p class="text">Il risultato è andato contro le nostre aspettative: la comunità energetica non
+                            è
+                            risultata più conveniente dell'area comune, perché si autoconsuma un po' meno e l'energia
+                            condivisa è troppo poca perché l'incentivo compensi. La soluzione con solare termico è
+                            risultata
+                            la meno conveniente: con la configurazione di partenza il VAN era negativo, e anche
+                            ottimizzata
+                            resta dietro a quelle con fotovoltaico. Nella configurazione migliore (area comune) conviene
+                            sfruttare tutta la superficie disponibile, 2.800 m² di tetti: VAN ed emissioni migliorano
+                            insieme, quindi non c'è un compromesso da cercare. Il VAN a 20 anni è di circa 0,9 milioni
+                            di
+                            euro, il tempo di ritorno di circa 7 anni e le emissioni scendono di circa il 46% rispetto
+                            al
+                            caso base. Nella relazione abbiamo dichiarato anche i limiti dello studio, come
+                            l'inclinazione
+                            dei pannelli e la disposizione dei tetti, che non abbiamo considerato.</p>
+                        </div>
+                      </details>
+                    </li>
+                    <li>
+                      <details class="project">
+                        <summary>
+                          <span class="item-title">Impianto Belvedere: cogenerazione da gas di discarica ed
+                            emissioni</span>
+                          <span class="when mono">Corso: Formazione e controllo di inquinanti nella combustione · A.A.
+                            2024/2025</span>
+                          <span class="when mono">Docente: LEONARDO TONGOTTI </span>
+                          <span class="meta"><strong>Competenze:</strong> bilanci di energia e di massa su un impianto
+                            di
+                            cogenerazione a biogas; dimensionamento di un sistema di deumidificazione (scambiatore,
+                            chiller,
+                            tubazioni); contabilità delle emissioni di gas serra (Scope 1, 2 e 3) e carbon footprint;
+                            stima
+                            di SO<sub>x</sub>, NO<sub>x</sub>, CO e CO<sub>2</sub> dalla combustione e confronto con i
+                            dati
+                            dichiarati dall'azienda; lettura di una dichiarazione ambientale (EMAS); lavoro in
+                            gruppo.</span>
+                        </summary>
+                        <div class="project-body">
+                          <p class="meta">Gruppo di 3 persone · Il mio ruolo: contributo a tutte le fasi del lavoro, con
+                            un'attenzione particolare al capitolo sulle emissioni</p>
+                          <p class="text">Il lavoro studia l'impianto Belvedere di Peccioli (Pisa), che brucia il biogas
+                            prodotto dalla discarica in quattro motori di cogenerazione per produrre energia elettrica e
+                            termica. Si è partiti dai dati pubblici dell'azienda (dichiarazione ambientale 2023) per
+                            ricostruire il funzionamento dell'impianto e analizzarne le emissioni.</p>
+                          <p class="text">Nella parte impiantistica abbiamo stimato la portata media di biogas elaborata
+                            dai
+                            motori (circa 1000 Nm³/h) e verificato il modello contro i dati aziendali (scarto dello
+                            0,4%).
+                            Poi abbiamo dimensionato la deumidificazione del biogas e valutato due possibili interventi
+                            di
+                            efficientamento. Nella parte ambientale abbiamo ricostruito la carbon footprint del 2023 e
+                            confrontato il caso reale con tre scenari alternativi: senza energia da fonti rinnovabili,
+                            senza
+                            captazione del biogas, con il biogas bruciato in torcia senza recupero. Abbiamo infine
+                            ricalcolato le emissioni dei motori con bilanci di combustione e le abbiamo confrontate con
+                            quelle dichiarate.</p>
+                          <p class="text">Risultato: la captazione e l'uso del biogas riducono in modo rilevante le
+                            emissioni rispetto agli scenari alternativi. Il ricalcolo degli inquinanti si discosta dai
+                            dati
+                            aziendali del 3% per gli SO<sub>x</sub> e del 15% per la CO<sub>2</sub>; abbiamo attribuito
+                            lo
+                            scarto alla composizione del biogas, nota solo in modo approssimato. Per gli NO<sub>x</sub>
+                            il
+                            nostro calcolo sovrastima i valori dichiarati.</p>
+                        </div>
+                      </details>
+                    </li>
+                    <li>
+                      <details class="project">
+                        <summary>
+                          <span class="item-title">Effetti della turbolenza ambiente sulla resa di turbine eoliche ad
+                            asse
+                            verticale</span>
+                          <span class="when mono">Corso: Conversione dell'energia · A.A. 2024/2025</span>
+                          <span class="when mono">Docente: STEFANIA ZANFORLIN</span>
+                          <span class="meta"><strong>Competenze:</strong> simulazione fluidodinamica (CFD) 2D non
+                            stazionaria di un profilo alare in moto oscillante; costruzione di una mesh strutturata;
+                            modellazione della turbolenza (k-ω SST); programmazione di una funzione personalizzata per
+                            imporre il moto della pala; calibrazione delle condizioni al contorno su dati sperimentali
+                            di
+                            letteratura; analisi di portanza, pressione e stallo dinamico; lavoro in coppia.
+                            <strong>Strumenti:</strong> ANSYS Fluent, C.</span>
+                        </summary>
+                        <div class="project-body">
+                          <p class="meta">Gruppo di 2 persone · Il mio ruolo: contributo a tutte le fasi del lavoro</p>
+                          <p class="text">Le turbine eoliche ad asse verticale lavorano in un flusso d'aria turbolento,
+                            che
+                            cambia il modo in cui il flusso si stacca dalla pala e vi si riattacca. Il progetto studia
+                            come
+                            l'intensità della turbolenza (0,3% e 8,2%) influenzi il comportamento aerodinamico di un
+                            profilo
+                            NACA 0018 che oscilla attorno al bordo d'attacco, a tre angoli medi di attacco (12°, 18°,
+                            22°):
+                            sei simulazioni in tutto.</p>
+                          <p class="text">Abbiamo simulato il flusso con un modello 2D non stazionario (URANS) e il
+                            modello
+                            di turbolenza k-ω SST, su una mesh strutturata di circa 44.000 nodi. Il moto della pala è
+                            stato
+                            imposto con una funzione scritta in linguaggio C e compilata in Fluent. L'intensità di
+                            turbolenza in ingresso è stata calibrata con prove preliminari, per riprodurre sulla pala il
+                            valore misurato nello studio sperimentale di riferimento (Damiola et al., 2023). Abbiamo poi
+                            analizzato ciclo per ciclo portanza, distribuzione di pressione, linee di corrente ed
+                            energia
+                            cinetica turbolenta.</p>
+                          <p class="text">Risultato: a 12° il flusso resta attaccato e la turbolenza incide poco. A 18°
+                            e
+                            22° una turbolenza maggiore rende lo stallo più graduale e favorisce il riattacco del
+                            flusso,
+                            con minore perdita di portanza. Il confronto con i dati sperimentali è buono nei primi due
+                            casi;
+                            nel terzo emergono discrepanze, che attribuiamo ai limiti del modello k-ω SST. Resta una
+                            differenza rispetto alla sperimentazione: a 18° con bassa turbolenza il riattacco del flusso
+                            risulta meno immediato nelle simulazioni.</p>
+                        </div>
+                      </details>
+                    </li>
+                    <li>
+                      <details class="project">
+                        <summary>
+                          <span class="item-title">Produzione di idrogeno verde da fotovoltaico per un impianto di
+                            polisilicio (processo Siemens)</span>
+                          <span class="when mono">Corso: Energie rinnovabili · A.A. 2024/2025</span>
+                          <span class="when mono">Docente: ALESSANDRO FRANCO</span>
+                          <span class="meta"><strong>Competenze:</strong> dimensionamento di un impianto per la
+                            produzione
+                            di idrogeno (fotovoltaico, elettrolizzatori, accumulo); stima della produzione fotovoltaica
+                            da
+                            dati orari di un anno meteorologico tipo (PVGIS); raggruppamento delle ore dell'anno in
+                            classi
+                            di irraggiamento per semplificare il modello; confronto tra configurazioni di
+                            elettrolizzatori
+                            (taglia, fattore di carico, potenza minima); analisi tecnico-economica (CAPEX, OPEX, VAN a
+                            20
+                            anni, costo livellato dell'idrogeno); ricerca bibliografica sul processo di produzione del
+                            polisilicio; lavoro in coppia.</span>
+                        </summary>
+                        <div class="project-body">
+                          <p class="meta">Gruppo di 2 persone · Il mio ruolo: contributo a tutte le fasi del lavoro</p>
+                          <p class="text">Il polisilicio per i moduli fotovoltaici si produce con il processo Siemens,
+                            che
+                            consuma idrogeno. Il progetto dimensiona, a Ospedaletto (Pisa), un impianto che produce
+                            idrogeno
+                            verde da fotovoltaico per coprire circa metà del fabbisogno di un impianto da 450 t/anno di
+                            silicio policristallino (14,6 t/anno di idrogeno).</p>
+                          <p class="text">Siamo partiti dall'irraggiamento orario di un anno meteorologico tipo (PVGIS),
+                            con
+                            valore medio di 170 W/m², e abbiamo stimato energia prodotta e idrogeno ottenibile per metro
+                            quadro di pannelli. Per rendere gestibile il calcolo abbiamo raggruppato le ore in classi:
+                            tre
+                            stagioni (alta, intermedia, bassa) e tre tipi di giornata (bella, coperta, brutta). Per ogni
+                            classe abbiamo calcolato potenza fotovoltaica, idrogeno prodotto e costo. Poi abbiamo
+                            confrontato due configurazioni di elettrolizzatori (172 + 57 kW e 114 + 114 kW),
+                            dimensionato il
+                            serbatoio di accumulo e fatto l'analisi economica (VAN a 20 anni e costo livellato
+                            dell'idrogeno, LCOH).</p>
+                          <p class="text">Risultato: la configurazione scelta prevede 831 pannelli (283 kW, 1661 m²),
+                            elettrolizzatori da 172 + 57 kW e un serbatoio da 40 kg a 30 bar. Produce circa 6978 kg/anno
+                            di
+                            idrogeno, il 48% del fabbisogno. L'investimento stimato è di circa 621.000 € (OPEX circa
+                            22.000
+                            €/anno) e l'LCOH è di circa 11 €/kg. Nelle ipotesi considerate il VAN risulta negativo per
+                            tutte
+                            le taglie analizzate.</p>
+                        </div>
+                      </details>
+                    </li>
+                    <li>
+                      <details class="project">
+                        <summary>
+                          <span class="item-title">Esperienze di scambio termico bifase: curva di ebollizione di un filo
+                            di
+                            platino in Novec 649</span>
+                          <span class="when mono">Corso: SISTEMI MULTIFASE · A.A. 2023/2024</span>
+                          <span class="when mono">Docente: PAOLO DI MARCO</span>
+                          <span class="meta"><strong>Competenze:</strong> messa a punto di un apparato sperimentale;
+                            misura
+                            a 4 fili e calibrazione dei sensori; acquisizione dati in tempo reale; analisi
+                            dell'ebollizione
+                            a film e confronto con le correlazioni di letteratura; lavoro in gruppo.
+                            <strong>Strumento:</strong> LabVIEW.</span>
+                        </summary>
+                        <div class="project-body">
+                          <p class="meta">Gruppo di 4 persone · Il mio ruolo: messa a punto dell'apparato e raccolta dei
+                            dati insieme al gruppo; analisi della parte di film boiling.</p>
+                          <p class="text">Obiettivo dell'esperienza di laboratorio era ricreare l'esperimento di
+                            Nukiyama:
+                            un filo di platino (4,5 cm di lunghezza, 0,2 mm di diametro), riscaldato per effetto Joule e
+                            immerso in un fluido bassobollente (Novec 649, punto di ebollizione 49 °C a pressione
+                            ambiente).
+                            Da questo si ricava la curva di ebollizione in pool boiling in tre condizioni: fluido saturo
+                            (49
+                            °C) e fluido sottoraffreddato a 37 °C e a 27 °C.</p>
+                          <p class="text">L'apparato è una cella stagna e isolata, con riscaldatori da 24 V, cold plate
+                            per
+                            termostatare il bagno e un condensatore per i vapori. La temperatura del filo è ricavata
+                            dalla
+                            sua resistenza con una misura a 4 fili. Quella del fluido è misurata da due sensori AD590
+                            posti
+                            alle estremità della cella, per verificare che il bagno non fosse stratificato. Prima delle
+                            prove sono stati puliti la cella e il filo e degasato il fluido, ed è stato applicato un
+                            cappotto termico. I sensori sono stati calibrati a gradini di 5 °C, da 23,9 °C fino alla
+                            saturazione, con un termometro a mercurio di riferimento. L'acquisizione e il controllo
+                            dell'alimentazione sono gestiti in LabVIEW. I dati sono stati confrontati con modelli e
+                            correlazioni di letteratura: Hsu per l'inizio dell'ebollizione, Rohsenow e Cooper per
+                            l'ebollizione nucleata, Zuber e Kutateladze (con correzioni per dimensioni e
+                            sottoraffreddamento) per il flusso critico. Il film boiling, che è la parte di cui mi sono
+                            occupato, è stato confrontato con le correlazioni di Bromley e di Siviour–Ede.</p>
+                          <p class="text">Il sottoraffreddamento aumenta il flusso termico critico: a 27 °C risulta
+                            circa il
+                            doppio rispetto alla saturazione (426,0 contro 226,6 kW/m<sup>2</sup>). Nel film boiling la
+                            correlazione di Bromley riproduce i dati meglio di quella di Siviour–Ede: a 27 °C e 49 °C lo
+                            scarto è nell'ordine del 5–10% contro circa il 25%. Nel complesso i dati sono in accordo
+                            accettabile con i modelli, con due eccezioni dichiarate nella relazione. La prova a 37 °C si
+                            discosta dall'andamento atteso, con ogni probabilità per un errore in fase di acquisizione.
+                            L'inizio dell'ebollizione non è invece descritto dal modello di Hsu: il surriscaldamento
+                            misurato è di circa 25,7 K contro 1,3 K previsti. Le ipotesi avanzate sono l'assenza di
+                            cavità
+                            della dimensione richiesta o la presenza di gas disciolto, e il fenomeno osservato somiglia
+                            più
+                            a una nucleazione omogenea che eterogenea.</p>
+                        </div>
+                      </details>
+                    </li>
+                  </ul>
+                </div>
+              </details>
+            </article>
+          </div>
+        </article>
+        <article class="entry">
+          <h3>Laurea in Ingegneria dell'Energia (L-9)</h3>
+          <p class="where">Università di Pisa</p>
+          <p class="when mono">2016 – 2023</p>
+          <p class="text">Corso di studio focalizzato sulla termodinamica applicata a contesti sia industriali sia
+            edili.</p>
+          <p class="meta"><strong>Competenze:</strong> termodinamica applicata a contesti industriali ed edili.
+            <strong>Strumenti:</strong> Microsoft Excel; MATLAB Simulink; Autodesk Fusion 360.
+          </p>
+        </article>
+
+        <!--
+        <article class="entry">
+          <h3>Corsi e certificazioni</h3>
+          <p class="text"><span class="todo">[Titolo del corso, ente che ha rilasciato l'attestato, anno. Anche quelli
+              seguiti per lavoro vanno qui.]</span></p>
+        </article>
+        -->
+      </div>
+    </section>
+    <!-- ESPERIENZA: ordine cronologico inverso. Le esperienze future vanno in cima, sopra questo blocco. -->
+    <section class="sec" id="esperienza">
+      <h2 class="mono">Esperienza lavorativa</h2>
+      <div>
+        <article class="entry">
+          <h3>Baker Hughes</h3>
+          <p class="where">tramite Sinergy S.r.l. · Massa / Firenze</p>
+          <span class="when mono">settembre 2022 – ottobre 2023</span>
+
+          <div class="children">
+            <article class="entry">
+              <details class="project">
+                <summary>
+                  <h4>Quality Project Manager Support</h4>
+                </summary>
+                <div class="project-body">
+                  <p class="text">Coordinamento e gestione di un progetto industriale internazionale e
+                    multidisciplinare:
+                    pianificazione e monitoraggio dell'avanzamento, rispetto dei requisiti di qualità, coordinamento tra
+                    team
+                    tecnici, fornitori e cliente, monitoraggio dei rischi e rispetto dei requisiti contrattuali,
+                    qualitativi e di
+                    sicurezza.</p>
+                  <p class="meta"><strong>Competenze:</strong> pianificazione e controllo dell'avanzamento;
+                    prioritizzazione;
+                    gestione e controllo della qualità di prodotto; monitoraggio dei rischi; coordinamento di team
+                    multidisciplinari; gestione di fornitori e interfacce; gestione del cliente; comunicazione; problem
+                    solving;
+                    lavoro in un contesto multiculturale.</p>
+
+                  <details class="project">
+                    <summary>
+                      <span class="item-title">Progetto Ichthys 2B Offshore LNG</span>
+                      <span class="when mono">Ichthys Booster · McDermott per Inpex</span>
+                      <span class="meta">Realizzazione e fornitura di 3 turbocompressori per un impianto LNG
+                        offshore.</span>
+                    </summary>
+                    <div class="project-body">
+                      <p class="text">Baker Hughes ha realizzato i 3 turbocompressori producendo internamente una parte
+                        dei
+                        componenti e acquistando gli altri; le macchine sono state poi assemblate e consegnate. Ho
+                        svolto
+                        attività di coordinamento e gestione del progetto in un contesto industriale internazionale e
+                        multidisciplinare, caratterizzato da elevata complessità tecnica e da requisiti stringenti in
+                        termini di
+                        tempi, qualità e sicurezza.</p>
+
+                      <p class="text"><strong>Pianificazione e monitoraggio.</strong> Mi occupavo principalmente della
+                        pianificazione e del monitoraggio delle attività, verificando l'avanzamento rispetto al
+                        programma e alle
+                        scadenze previste, individuando eventuali criticità e coordinando le azioni necessarie per
+                        risolverle.</p>
+
+                      <p class="text"><strong>Qualità, rischi e requisiti.</strong> Seguivo il rispetto dei requisiti di
+                        qualità
+                        interni e monitoravo i rischi, assicurando che fossero rispettati i requisiti contrattuali,
+                        qualitativi e
+                        di sicurezza.</p>
+
+                      <p class="text"><strong>Coordinamento tra le funzioni.</strong> Un aspetto centrale del mio lavoro
+                        era
+                        il coordinamento tra le diverse funzioni aziendali coinvolte, favorendo l'allineamento tra le
+                        discipline tecniche e le altre funzioni operative, il monitoraggio delle interdipendenze e la
+                        gestione delle priorità.</p>
+
+                      <p class="text"><strong>Fornitori e interfacce.</strong> Monitoravo le attività dei fornitori e le
+                        interfacce tra i diversi soggetti coinvolti, contribuendo a garantire la continuità delle
+                        attività e
+                        il rispetto degli impegni assunti.</p>
+
+                      <p class="text"><strong>Rapporti con il cliente.</strong> Seguivo i rapporti con il cliente e gli
+                        interlocutori del progetto: partecipavo alle riunioni di coordinamento, monitoravo richieste ed
+                        eventuali modifiche e assicuravo un adeguato flusso di informazioni sullo stato di avanzamento
+                        delle
+                        attività.</p>
+
+                      <p class="text">L'esperienza, svolta in un contesto multiculturale, mi ha dato una visione
+                        complessiva
+                        dell'esecuzione di un progetto industriale complesso.</p>
+                    </div>
+                  </details>
+                </div>
+              </details>
+            </article>
+          </div>
+        </article>
+      </div>
+    </section>
+    <!--
+    <section class="sec" id="competenze">
+      <h2 class="mono">Competenze</h2>
+      <dl class="skills">
+        <div>
+          <dt class="mono">Modellazione</dt>
+          <dd>Modellazione di sistemi elettrici (PyPSA-Earth); modelli di valutazione integrata (REMIND)</dd>
+        </div>
+        <div>
+          <dt class="mono">Gestione</dt>
+          <dd>Project management</dd>
+        </div>
+        <div>
+          <dt class="mono">Strumenti</dt>
+          <dd><span class="todo">[Software e linguaggi che usi davvero, ad es. Python, GIS, Excel]</span></dd>
+        </div>
+        <div>
+          <dt class="mono">Lingue</dt>
+          <dd><span class="todo">[Lingue e livelli, ad es. Inglese B2/C1]</span></dd>
+        </div>
+      </dl>
+    </section>
+-->
+    <!--
+    EVENTI: una sola sezione per tutto (studio, lavoro, progetti personali).
+    Ogni voce ha sempre gli stessi campi: titolo, organizzatore o luogo, data, il tuo ruolo, contesto.
+    Il ruolo (relatore, organizzatore, partecipante) si legge nella riga della data.
+  -->
+    <section class="sec" id="eventi">
+      <h2 class="mono">Eventi e interventi</h2>
+      <div>
+        <article class="entry">
+          <details class="project">
+            <summary>
+              <h3>PyPSA-meets-Earth LAB 2026, Pisa</h3>
+              <span class="meta">Community PyPSA-meets-Earth, in collaborazione con l'Università di Pisa · DESTEC</span>
+              <span class="when mono">5–6 novembre 2026 · Partecipante</span>
+            </summary>
+            <div class="project-body">
+              <p class="text">Due giornate dedicate a PyPSA, il software open-source per la modellazione dei sistemi
+                energetici, e al suo ecosistema (tra cui PyPSA-Earth). Il primo giorno è stato dedicato alla formazione
+                pratica per nuovi utenti, con introduzione a PyPSA, panoramica dell'ecosistema e sessione dedicata a
+                PyPSA-Earth-Sec. Il giorno seguente lightning talk da 10 minuti su applicazioni per paese o regione,
+                strumenti e flussi di lavoro open-source, e due tavole rotonde, una sulla sostenibilità della community
+                e
+                una sulla collaborazione tra modelli e comunità. Secondo gli organizzatori hanno partecipato oltre 160
+                persone, in presenza e online.</p>
+            </div>
+          </details>
+        </article>
+      </div>
+    </section>
+
+    <section class="sec" id="contatti">
+      <h2 class="mono">Contatti</h2>
+      <dl class="contacts">
+        <dt class="mono">Email</dt>
+        <dd>pieraccioni.lorenz@gmail.com</dd>
+        <dt class="mono">LinkedIn</dt>
+        <dd>Lorenzo Pieraccioni · www.linkedin.com/in/lorenzo-pieraccioni</dd>
+      </dl>
+    </section>
+
+    <footer class="mono">Portfolio Lorenzo Pieraccioni · novembre 2026 </footer>
+  </div>
+</body>
+
+</html>

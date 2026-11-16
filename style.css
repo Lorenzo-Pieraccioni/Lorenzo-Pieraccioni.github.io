@@ -1,0 +1,229 @@
+/* STILE CONDIVISO
+   Questo file contiene l'aspetto (colori, caratteri, spaziature) di tutte le pagine.
+   Ogni pagina lo richiama con <link rel="stylesheet" href="style.css">.
+   Una modifica fatta qui cambia l'aspetto di tutte le pagine insieme. */
+
+/* Layout: scheda tecnica a colonna singola. Rail sinistra con etichette in mono, contenuto a destra; su telefono le colonne si impilano. */
+:root {
+  /* COLORI (tema chiaro). Ogni colore è un codice esadecimale (#RRGGBB).
+     Prova a cambiare --accent: è il colore dei link e dell'etichetta in alto.
+     Per scegliere un codice: cerca "color picker" nel browser. */
+  --bg: #F3F6F5;
+  --fg: #15201C;
+  --muted: #52615B;
+  --line: #D3DBD8;
+  --accent: #B02E0C;
+  --todo-bg: #FBEBD7;
+  --todo-fg: #8A3F05;
+  --font-display: "Bricolage Grotesque", "Helvetica Neue", Arial, sans-serif;
+  --font-body: "Source Sans 3", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+
+/* TEMA SCURO. Si attiva da solo se il dispositivo del visitatore usa il tema scuro.
+   Se cambi un colore sopra, cambia anche l'equivalente qui sotto (due volte). */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0E1614;
+    --fg: #E5ECE9;
+    --muted: #9DB0A9;
+    --line: #2A3A36;
+    --accent: #5FC7C0;
+    --todo-bg: #3A2A16;
+    --todo-fg: #F2B27A;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0E1614;
+  --fg: #E5ECE9;
+  --muted: #9DB0A9;
+  --line: #2A3A36;
+  --accent: #5FC7C0;
+  --todo-bg: #3A2A16;
+  --todo-fg: #F2B27A;
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  padding-block: 1.5rem 3rem;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+.page { max-width: 62rem; margin-inline: auto; }
+
+a { color: var(--accent); text-underline-offset: 0.2em; }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+
+.mono {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* Barra superiore */
+.topbar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.5rem 1.5rem;
+  padding-bottom: 1.25rem;
+  color: var(--muted);
+}
+.topbar nav { display: flex; flex-wrap: wrap; gap: 0.25rem 1.25rem; }
+.topbar a { color: var(--muted); text-decoration: none; }
+.topbar a:hover { color: var(--accent); text-decoration: underline; }
+.topbar a[aria-current="page"] { color: var(--accent); }
+
+/* Intestazione */
+.hero { padding-block: 3rem 2.5rem; border-top: 1px solid var(--line); }
+.eyebrow { color: var(--accent); margin: 0 0 1rem; }
+h1 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(2.5rem, 8vw, 4.5rem);
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+  margin: 0;
+  text-wrap: balance;
+}
+.lede { max-width: 42rem; font-size: 1.2rem; margin: 1.5rem 0 0; }
+
+.spec {
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr);
+  gap: 0.6rem 1.5rem;
+  margin: 2.25rem 0 0;
+  padding-block: 1.1rem;
+  border-block: 1px solid var(--line);
+}
+.spec dt { color: var(--muted); padding-top: 0.2rem; }
+.spec dd { margin: 0; min-width: 0; }
+
+/* Sezioni */
+.sec {
+  display: grid;
+  grid-template-columns: 11rem minmax(0, 1fr);
+  gap: 1rem 2.5rem;
+  padding-block: 2.5rem;
+  border-top: 1px solid var(--line);
+}
+.sec > h2 { color: var(--muted); font-weight: 500; margin: 0; padding-top: 0.35rem; }
+.sec > div { min-width: 0; }
+
+/* Voci (h3) */
+.entry { display: grid; gap: 0.2rem; }
+.entry + .entry { margin-top: 2rem; }
+.entry h3 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 1.35rem;
+  line-height: 1.25;
+  margin: 0;
+  text-wrap: balance;
+}
+.entry .where { margin: 0; }
+.entry .when { margin: 0.1rem 0 0.5rem; color: var(--muted); }
+.entry p.text { margin: 0; max-width: 65ch; }
+.entry p.text + p.text { margin-top: 0.75rem; }
+.entry ul { margin: 0.4rem 0 0; padding-left: 1.2rem; max-width: 65ch; }
+.entry li + li { margin-top: 0.25rem; }
+
+/* Elenco di progetti: ogni punto ha titolo, riga di contesto e descrizione. */
+/* --- Progetti universitari --- */
+
+/* Spaziatura tra un progetto e l'altro */
+.entry .projects li + li { margin-top: 1.25rem; }
+
+/* Titolo del progetto */
+.item-title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+
+/* Riga di dettaglio in testo normale (non maiuscolo): gruppo, ruolo, competenze, esito */
+.entry .meta { margin: 0.15rem 0 0; color: var(--muted); font-size: 0.95rem; max-width: 65ch; }
+
+/* Progetti a tendina: si aprono cliccando sul titolo */
+.entry .projects { list-style: none; padding-left: 0; }
+.project summary {
+  position: relative;
+  padding-left: 1.5rem;
+  cursor: pointer;
+  list-style: none;
+}
+.project summary::-webkit-details-marker { display: none; }
+.project summary > span { display: block; }
+.project summary::before {
+  content: "+";
+  position: absolute;
+  left: 0;
+  font-family: var(--font-mono);
+  color: var(--accent);
+}
+.project[open] summary::before { content: "−"; }
+.project summary:hover .item-title { color: var(--accent); }
+.project summary:hover h4 { color: var(--accent); }
+.project summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; border-radius: 2px; }
+.project-body { padding: 0.75rem 0 0 1.5rem; }
+
+/* Sotto-voci (h4): una voce dentro un'altra, ad esempio la Tesi dentro la Laurea magistrale.
+   La linea verticale a sinistra rende visibile la gerarchia. */
+.children {
+  display: grid;
+  gap: 1.75rem;
+  margin-top: 1.5rem;
+  padding-left: 1.25rem;
+  border-left: 1px solid var(--line);
+}
+.children > .entry + .entry { margin-top: 0; }
+.entry h4 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 1.15rem;
+  line-height: 1.3;
+  margin: 0;
+  text-wrap: balance;
+}
+
+.skills { display: grid; gap: 1.25rem; margin: 0; }
+.skills > div { display: grid; grid-template-columns: 10rem minmax(0, 1fr); gap: 0.25rem 1.5rem; }
+.skills dt { color: var(--muted); padding-top: 0.2rem; }
+.skills dd { margin: 0; min-width: 0; }
+
+.contacts { display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: 0.6rem 1.5rem; margin: 0; }
+.contacts dt { color: var(--muted); padding-top: 0.2rem; }
+.contacts dd { margin: 0; min-width: 0; overflow-wrap: anywhere; user-select: all; }
+
+/* Segnaposto da completare.
+   Quando hai scritto il testo vero, togli il blocco <span class="todo">[...]</span> e lascia solo il testo. */
+.todo {
+  background: var(--todo-bg);
+  color: var(--todo-fg);
+  border-radius: 3px;
+  padding: 0.05em 0.35em;
+  font-size: 0.95em;
+}
+
+footer { padding-top: 1.5rem; border-top: 1px solid var(--line); color: var(--muted); }
+
+/* Schermi stretti (telefono): le colonne si impilano */
+@media (max-width: 719px) {
+  .sec { grid-template-columns: minmax(0, 1fr); gap: 0.5rem; padding-block: 2rem; }
+  .skills > div { grid-template-columns: minmax(0, 1fr); }
+  .hero { padding-block: 2rem; }
+  .children { padding-left: 1rem; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+}
+
